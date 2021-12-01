@@ -1,2 +1,1 @@
-# android_base_code
-This code contains the basic project to start with.
+This code contains the training demo code.
