@@ -21,6 +21,9 @@
         android:theme="@style/Theme.AndroidBaseCode"
         tools:replace="android:label,android:allowBackup">
         <activity
+            android:name=".activaties.ScopeStorage"
+            android:exported="true" />
+        <activity
             android:name=".activaties.ScopedStorageActivity"
             android:exported="true" />
         <activity

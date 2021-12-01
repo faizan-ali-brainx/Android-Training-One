@@ -4,26 +4,25 @@ import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.brainx.baseproject.R
 import com.brainx.baseproject.base.BaseActivity
-import com.brainx.baseproject.databinding.ActivityBaseBinding
-import com.brainx.baseproject.databinding.ActivityScopedStorageBinding
+import com.brainx.baseproject.databinding.ActivityScopeStorageBinding
+import com.brainx.baseproject.databinding.ActivityWorkManagerBinding
 import com.brainx.baseproject.utils.checkStoragePermission
 import com.brainx.baseproject.utils.openSettings
 import com.brainx.baseproject.utils.runTimePermissions
-import com.brainx.baseproject.viewModels.BaseViewModel
 import com.brainx.baseproject.viewModels.ScopeStorageViewModel
+import com.brainx.baseproject.viewModels.WorkManagerViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ScopeStorageActivity : BaseActivity<ScopeStorageViewModel, ActivityScopedStorageBinding>() {
-    
+class ScopeStorage : BaseActivity<ScopeStorageViewModel, ActivityScopeStorageBinding>() {
     override val mViewModel: ScopeStorageViewModel by viewModels()
-    override fun getViewBinding() = ActivityScopedStorageBinding.inflate(layoutInflater)
+    override fun getViewBinding() = ActivityScopeStorageBinding.inflate(layoutInflater)
 
     override fun customOnCreate(savedInstanceState: Bundle?) {
         mViewBinding.apply {
             viewModel = mViewModel
+            accessStorageData()
         }
     }
 
@@ -51,11 +50,13 @@ class ScopeStorageActivity : BaseActivity<ScopeStorageViewModel, ActivityScopedS
                         }
                     } else if (isPermanentlyDenied) {
                         mViewModel.showToast("Goto Settings and Please grant Permissions")
-                        this@ScopeStorageActivity.openSettings()
+                        this@ScopeStorage.openSettings()
                     }
                 }
             }
         }
     }
-}
 
+
+
+}
