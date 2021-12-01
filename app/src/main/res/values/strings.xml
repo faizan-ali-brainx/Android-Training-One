@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Android Training One</string>
+    <string name="user_name">User Name:</string>
+    <string name="please_enter_full_name">Please enter full name</string>
+    <string name="get_post">Get Post</string>
+    <string name="get_post_1">Get Post 1</string>
+    <string name="get_post_2">Get Post 2</string>
+    <string name="get_post_3">Get Post 3</string>
+    <string name="base_activity">Base Activity</string>
+    <string name="second_activity">Second Activity</string>
+</resources>
